@@ -22,9 +22,14 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
       List<Movie> movieList;
       if (movieId == 0) {
         movieList = await service.getNowPlayingMovie();
+      } else {
+        //print(movieId);
+        movieList = await service.getMovieByGenre(movieId);
       }
+
       yield MovieLoaded(movieList);
     } on Exception catch (e) {
+      print(e);
       yield MovieError();
     }
   }

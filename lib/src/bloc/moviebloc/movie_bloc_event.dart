@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:movieApp/src/model/movie.dart';
 
 abstract class MovieEvent extends Equatable {
   const MovieEvent();
